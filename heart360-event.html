@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart 360° - AI for Cardiovascular Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .event-details {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .event-details div {
+            display: inline-block;
+            margin: 15px 30px;
+        }
+
+        .event-details strong {
+            color: #667eea;
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .event-details span {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .summary {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .schedule {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .schedule-item {
+            padding: 20px 30px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .schedule-item:hover {
+            background: #f8f9fa;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 140px;
+            font-size: 1.1em;
+        }
+
+        .activity {
+            flex: 1;
+            font-size: 1.05em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+        }
+
+        .organizers, .location {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .organizers ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .organizers li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .organizers li:before {
+            content: "●";
+            color: #667eea;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .location-info {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .location-icon {
+            color: #667eea;
+            margin-right: 10px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .event-details div {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .time {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Heart 360°</h1>
+        <p>Harnessing AI for Cardiovascular Research, Diagnosis, Therapy & Prevention</p>
+    </div>
+
+    <div class="event-details">
+        <div>
+            <strong>📅 DATE</strong>
+            <span>September 2026</span>
+        </div>
+        <div>
+            <strong>📍 LOCATION</strong>
+            <span>Wallenberg Conference Center, Göteborg</span>
+        </div>
+        <div>
+            <strong>👥 PARTICIPANTS</strong>
+            <span>Up to 80 attendees</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>About the Event</h2>
+            <div class="summary">
+                <p><strong>Heart 360°</strong> is a focused seminar exploring the transformative role of artificial intelligence (AI) across the cardiovascular disease spectrum, from early discovery to prevention. As cardiovascular disease remains a leading global health burden, the integration of AI into research, clinical care, drug development, and public health offers new opportunities to enhance understanding, precision, and outcomes.</p>
+                
+                <p style="margin-top: 20px;">The seminar is structured into four sessions: <strong>Discovery</strong>, <strong>Diagnosis</strong>, <strong>Drug Development</strong>, and <strong>Prevention</strong>, bringing together experts from academia, healthcare, and industry. Each session will highlight how AI-driven tools are reshaping translational research, enabling earlier and more accurate diagnoses, accelerating therapeutic innovation, and supporting data-driven prevention strategies.</p>
+                
+                <p style="margin-top: 20px;">By fostering interdisciplinary dialogue, Heart 360° aims to showcase cutting-edge applications of AI, identify key challenges, and inspire collaborative efforts to drive the future of cardiovascular science and care.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Schedule</h2>
+            <div class="schedule">
+                <div class="schedule-item">
+                    <div class="time">09:00 - 09:30</div>
+                    <div class="activity">Registration and Poster Setup</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">09:30 - 09:45</div>
+                    <div class="activity">Opening Ceremony</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">09:45 - 10:30</div>
+                    <div class="activity"><strong>Speaker 1:</strong> AI in Disease Diagnosis</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">10:30 - 10:45</div>
+                    <div class="activity">☕ Fika Break</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">10:45 - 11:30</div>
+                    <div class="activity"><strong>Speaker 2:</strong> AI in Drug Development</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">11:30 - 12:00</div>
+                    <div class="activity">2 Selected Abstracts on Disease Diagnosis and Drug Development</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">12:00 - 13:00</div>
+                    <div class="activity">🍽️ Lunch</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">13:15 - 14:00</div>
+                    <div class="activity"><strong>Speaker 3:</strong> AI in Disease Prevention</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">14:00 - 14:45</div>
+                    <div class="activity"><strong>Speaker 4:</strong> AI in Disease Discovery/Translational Research</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">14:45 - 15:15</div>
+                    <div class="activity">2 Selected Abstracts on Disease Prevention and Translational Research</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">15:15 - 16:30</div>
+                    <div class="activity">☕ Fika, Poster Session & Networking</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Organizers</h2>
+            <div class="organizers">
+                <ul>
+                    <li>SciLifeLab Gothenburg</li>
+                    <li>NBIS</li>
+                    <li>SciLifeLab Chalmers Mass Spectrometry Infrastructure</li>
+                    <li>RISE</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Venue</h2>
+            <div class="location">
+                <div class="location-info">
+                    <span class="location-icon">📍</span>
+                    <strong>Wallenberg Conference Center</strong>
+                </div>
+                <div class="location-info" style="font-size: 1.1em; margin-top: 10px;">
+                    Göteborg, Sweden
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#" class="cta-button">Register Your Interest</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SciLifeLab Gothenburg | Heart 360° - Harnessing AI for Cardiovascular Research</p>
+        <p style="margin-top: 10px; opacity: 0.8;">For more information, please contact the organizing committee</p>
+    </footer>
+</body>
+</html>
